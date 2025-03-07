@@ -59,3 +59,26 @@ function playRound(humanChoice, computerChoice) {
 
 	return roundResult;
 }
+
+/*
+ * playGame
+ * Play the game for 5 rounds.
+ */
+
+function playGame() {
+	let humanScore = 0;
+	let computerScore = 0;
+	let roundCount = 0;
+
+	while (roundCount < 5) {
+		let roundResult = playRound(getHumanChoice(), getComputerChoice());
+
+		if (roundResult == "win") 
+			++humanScore;
+		else if (roundResult == "loss")
+			++computerScore;
+		roundCount++;
+		console.log(`Human vs Computer \t  ${humanScore} : ${computerScore}`);
+	}
+}
+playGame();
