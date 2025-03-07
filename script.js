@@ -78,7 +78,7 @@ function playGame() {
 		else if (roundResult == "loss")
 			++computerScore;
 		roundCount++;
-		console.log(`Human vs Computer \t  ${humanScore} : ${computerScore}`);
+		alert(`Human vs Computer \t  ${humanScore} : ${computerScore}`);
 	}
 }
 playGame();
