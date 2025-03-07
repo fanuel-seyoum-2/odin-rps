@@ -38,7 +38,7 @@ function playRound(humanChoice, computerChoice) {
 
 	if (humanChoice == computerChoice) {
 		roundResult = "tie";
-		console.log("It's a tie");
+		alert("It's a tie");
 	}
 
 	else if (
@@ -48,10 +48,10 @@ function playRound(humanChoice, computerChoice) {
 		) {
 		
 		roundResult = "win";
-		console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+		alert(`You win! ${humanChoice} beats ${computerChoice}`);
 	}
 	else {
-		console.log(`You lose! ${computerChoice} beats ${humanChoice} 
+		alert(`You lose! ${computerChoice} beats ${humanChoice} 
 		Either that, or ${humanChoice} isn't playable in this game!
 		Check that you spelled it correctly!
 		`);
