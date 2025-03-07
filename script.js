@@ -80,5 +80,8 @@ function playGame() {
 		roundCount++;
 		alert(`Human vs Computer \t  ${humanScore} : ${computerScore}`);
 	}
+	alert(`Final Score:\n
+	       Human vs Computer
+	 ${humanScore} : ${computerScore}`);
 }
 playGame();
