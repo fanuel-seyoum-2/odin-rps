@@ -8,12 +8,21 @@
 function getComputerChoice() {
 
 	let pick = Math.floor(Math.random() * 9)
-	let choice = "Scissors";
+	let choice = "scissors";
 
 	if (pick < 3)
-		choice = "Rock";
+		choice = "rock";
 	else if (pick < 6)
-		choice = "Paper";
+		choice = "paper";
 
 	return choice;
+}
+/*
+ * getHumanChoice 
+ * Prompts the user for their choice
+ */
+function getHumanChoice() {
+	let choice = prompt(`Pick one: 
+	Rock | Paper } Scissors`, "Scissors");
+	return choice.toLowerCase();
 }
