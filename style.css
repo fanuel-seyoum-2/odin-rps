@@ -20,7 +20,7 @@ header {
 
 	display: flex;
 	justify-content: center;
-	flex: 1;
+	flex: 1 1 auto;
 	gap: 12px;
 }
 header img {
@@ -58,6 +58,7 @@ header img {
 	padding-bottom: 20px;
 	display: flex;
 	justify-content: space-evenly;
+	flex-wrap: wrap;
 }
 .hd {
 	padding-bottom: 12px;
