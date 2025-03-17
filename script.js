@@ -81,6 +81,20 @@ function updateHistory(playerChoice, computerChoice) {
 	addNewElement("img", "src", `assets/images/${computerChoice}.png`, ".opponent-hist");
 }
 
+function endGame(score) {
+	if (score[0] === 5 || score[1] === 5) {
+		let zone = document.querySelector(".zone");
+		zone.textContent = `Game Over!
+		Hit Refresh to Start a New Game`
+	}
+	let comments = document.querySelector(".comments");
+	if (score[0] > score[1]) 
+		comments.textContent = `Congratulations! You win!`;
+	else
+		comments.textContent = `You lost. Care to have another go?`;
+		
+}
+
 let score = [0,0];
 
 let bts = document.querySelector(".bts");
@@ -90,4 +104,5 @@ bts.addEventListener('click', (e) => {
 	let res = playRound(id, compChoice);
 	score = updateScore(res, score);
 	updateHistory(id, compChoice);
+	endGame(score);
 });
