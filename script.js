@@ -86,13 +86,13 @@ function endGame(score) {
 		let zone = document.querySelector(".zone");
 		zone.textContent = `Game Over!
 		Hit Refresh to Start a New Game`
+
+		let comments = document.querySelector(".comments");
+		if (score[0] > score[1]) 
+			comments.textContent = `Congratulations! You win!`;
+		else
+			comments.textContent = `You lost. Care to have another go?`;
 	}
-	let comments = document.querySelector(".comments");
-	if (score[0] > score[1]) 
-		comments.textContent = `Congratulations! You win!`;
-	else
-		comments.textContent = `You lost. Care to have another go?`;
-		
 }
 
 let score = [0,0];
