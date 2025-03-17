@@ -74,3 +74,8 @@ header img {
 	align-items: center;
 	flex-wrap: wrap;
 }
+.player-hist,
+.opponent-hist {
+	display: flex;
+	flex-flow: column nowrap;
+}
