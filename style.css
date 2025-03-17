@@ -1,0 +1,68 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	color: white;
+	background-color: #01615F;
+
+	display: flex;
+	flex-flow: column nowrap;
+}
+header {
+	color: white;
+	background-color: #004443;
+	padding: 20px 0;
+
+	font-size: 16px;
+	font-weight: 900;
+
+	display: flex;
+	justify-content: center;
+	flex: 1;
+	gap: 12px;
+}
+header img {
+	border-radius: 21px;
+}
+.score-board {
+	padding: 20px;
+	display: flex;
+	flex-flow: column nowrap;
+}
+.hd{
+	font-weight: 700;
+	font-size: 18px;
+	align-self: flex-start;
+}
+.score,
+.comments {
+	font-size: 14px;
+	align-self: center;
+}
+.play-ground {
+	border-top: solid 2px #004443;
+	padding: 20px;
+	display: flex;
+	flex-flow: column wrap;
+}
+.play-ground img,
+.play-ground button{
+	width: 100px;
+	height: auto;
+	border-radius: 50px;
+}
+.zone {
+	display: flex;
+	justify-content: space-evenly;
+}
+.hd {
+	padding-bottom: 12px;
+	display: flex;
+	justify-content: center;
+}
+.pers-im {
+	display: flex;
+	gap: 16px;
+}
