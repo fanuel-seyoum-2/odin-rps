@@ -62,6 +62,25 @@ function updateScore(roundResult, currentScore) {
 	return [humanScore, computerScore];
 }
 
+/*
+ * addNewElement
+ * - Creates a new element of typeElemType
+ * - Sets the attrName given to attr
+ * - Appends it to parentEl
+ */
+function addNewElement (elemType, attrName, attr, parentElem) {
+	let elemVar = document.createElement(elemType);
+	elemVar.setAttribute(attrName, attr);
+	
+	let par = document.querySelector(parentElem);
+	par.appendChild(elemVar);
+}
+
+function updateHistory(playerChoice, computerChoice) {
+	addNewElement("img", "src", `assets/images/${playerChoice}.png`, ".player-hist");
+	addNewElement("img", "src", `assets/images/${computerChoice}.png`, ".opponent-hist");
+}
+
 let score = [0,0];
 
 let bts = document.querySelector(".bts");
@@ -70,4 +89,5 @@ bts.addEventListener('click', (e) => {
 	let compChoice = getComputerChoice();
 	let res = playRound(id, compChoice);
 	score = updateScore(res, score);
+	updateHistory(id, compChoice);
 });
