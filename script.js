@@ -50,6 +50,18 @@ function playRound(humanChoice, computerChoice) {
 	return roundResult;
 }
 
+function updateScore(roundResult, currentScore) {
+	let [humanScore, computerScore] = currentScore;
+
+	if (roundResult === "win") ++humanScore;
+	else if (roundResult === "loss") ++computerScore;
+
+	let scoreDiv = document.querySelector(".score");
+	scoreDiv.textContent = `${humanScore} : ${computerScore}`
+
+	return [humanScore, computerScore];
+}
+
 let score = [0,0];
 
 let bts = document.querySelector(".bts");
@@ -57,4 +69,5 @@ bts.addEventListener('click', (e) => {
 	let id = e.target.id;
 	let compChoice = getComputerChoice();
 	let res = playRound(id, compChoice);
+	score = updateScore(res, score);
 });
