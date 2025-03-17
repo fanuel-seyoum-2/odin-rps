@@ -36,9 +36,11 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
 	let roundResult = "loss";
 
+	const comments = document.querySelector(".comments");
+
 	if (humanChoice == computerChoice) {
 		roundResult = "tie";
-		alert("It's a tie");
+		comments.textContent = "It's a tie";
 	}
 
 	else if (
@@ -48,40 +50,18 @@ function playRound(humanChoice, computerChoice) {
 		) {
 		
 		roundResult = "win";
-		alert(`You win! ${humanChoice} beats ${computerChoice}`);
+		comments.textContent =`You win! ${humanChoice} beats ${computerChoice}`;
 	}
 	else {
-		alert(`You lose! ${computerChoice} beats ${humanChoice} 
-		Either that, or ${humanChoice} isn't playable in this game!
-		Check that you spelled it correctly!
-		`);
+		comments.textContent = `You lose! ${computerChoice} beats ${humanChoice}`
 	}
 
 	return roundResult;
 }
 
-/*
- * playGame
- * Play the game for 5 rounds.
- */
-
-function playGame() {
-	let humanScore = 0;
-	let computerScore = 0;
-	let roundCount = 0;
-
-	while (roundCount < 5) {
-		let roundResult = playRound(getHumanChoice(), getComputerChoice());
-
-		if (roundResult == "win") 
-			++humanScore;
-		else if (roundResult == "loss")
-			++computerScore;
-		roundCount++;
-		alert(`Human vs Computer \t  ${humanScore} : ${computerScore}`);
-	}
-	alert(`Final Score:\n
-	       Human vs Computer
-	 ${humanScore} : ${computerScore}`);
-}
-playGame();
+let bts = document.querySelector(".bts");
+bts.addEventListener('click', (e) => {
+	let id = e.target.id;
+	let compChoice = getComputerChoice();
+	let res = playRound(id, compChoice);
+});
