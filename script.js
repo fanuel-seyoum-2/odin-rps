@@ -18,15 +18,6 @@ function getComputerChoice() {
 	return choice;
 }
 /*
- * getHumanChoice 
- * Prompts the user for their choice
- */
-function getHumanChoice() {
-	let choice = prompt(`Pick one: 
-	Rock | Paper | Scissors`, "Scissors");
-	return choice.toLowerCase();
-}
-/*
  * playRound
  * Compares the parameters and displays the winning party
  *
@@ -58,6 +49,8 @@ function playRound(humanChoice, computerChoice) {
 
 	return roundResult;
 }
+
+let score = [0,0];
 
 let bts = document.querySelector(".bts");
 bts.addEventListener('click', (e) => {
